@@ -1,0 +1,117 @@
+@forward "variables";
+@use "variables" as *;
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+// FONTS
+@font-face {
+  font-family: $heading-font;
+  src: url("/src/fonts/bigola-display-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $primary-font;
+  src: url("/src/fonts/BB.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Mixin
+@mixin too-small-mobile {
+  @media (min-width: $too-small-mobile) {
+    @content;
+  }
+}
+@mixin mid-small-mobile {
+  @media (min-width: $mid-small-mobile) {
+    @content;
+  }
+}
+@mixin small-mobile {
+  @media (min-width: $small-mobile) {
+    @content;
+  }
+}
+@mixin mid-mobile {
+  @media (min-width: $mid-mobile) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+@mixin small-tab {
+  @media (min-width: $small-tab) {
+    @content;
+  }
+}
+@mixin big-tab {
+  @media (min-width: $big-tab) {
+    @content;
+  }
+}
+@mixin small-desktop {
+  @media (min-width: $small-desktop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin semi-mid-desktop {
+  @media (min-width: $semi-mid-desktop) {
+    @content;
+  }
+}
+@mixin mid-desktop {
+  @media (min-width: $mid-desktop) {
+    @content;
+  }
+}
+@mixin large-desktop {
+  @media (min-width: $large-desktop) {
+    @content;
+  }
+}
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global
+* {
+  // font-family: $heading-font;
+  font-family: $primary-font;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light-bg;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $secondary-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $light-bg;
+  }
+}
+
+section {
+  padding-block: 60px;
+  @include big-tab() {
+    padding-block: 80px;
+  }
+}
