@@ -19,8 +19,9 @@ function generateEntryPoints(): Record<string, string> {
 }
 
 export default defineConfig({
-  base: "/markography-clicks",
+  base: "./",
   build: {
+    outDir: "dist", 
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       input: {
